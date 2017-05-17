@@ -10,6 +10,11 @@
   "author": "Mahefa",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "messagebird": "^2.1.1",
+    "path": "^0.12.7",
+    "ttn": "^2.1.1"
   }
 }

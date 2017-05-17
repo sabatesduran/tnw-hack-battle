@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test bike</title>
+</head>
+<body>
+    <h1>Hello there. Biking is fun, right?</h1>
+    <form action="/blink" method="GET">
+        <button type="submit">Blink</button>
+    </form>
+    <form action="/locate" method="POST">
+        <input type="hidden" name="lat" value="52.378562">
+        <input type="hidden" name="lon" value="4.876438">
+        <button type="submit">Submit location</button>
+    </form>
+</body>
+</html>
