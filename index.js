@@ -35,7 +35,7 @@ app.post('/locate', function (req, res) {
   res.sendFile(path.join(__dirname + '/webserver/index.html'));
 });
 
-app.listen(3000, function () {
+app.listen(80, function () {
   ttnApi = new TtnAPI();
   messageApi = new MessageAPI();
   console.log('App started. Listening on 3000');
