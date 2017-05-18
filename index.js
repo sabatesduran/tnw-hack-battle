@@ -35,8 +35,10 @@ app.post('/locate', function (req, res) {
   res.sendFile(path.join(__dirname + '/webserver/index.html'));
 });
 
-app.listen(80, function () {
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
   ttnApi = new TtnAPI();
   messageApi = new MessageAPI();
-  console.log('App started. Listening on 3000');
+  console.log('App started. Listening on ' + port);
 });
