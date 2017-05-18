@@ -1,5 +1,5 @@
-const TtnAPI = require('./ttnAPI');
-const MessageAPI = require('./messageBirdAPI');
+const TtnAPI = require('./webserver/ttnAPI');
+const MessageAPI = require('./webserver/messageBirdAPI');
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
@@ -12,12 +12,12 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/webserver/index.html'));
 });
 
 app.get('/blink', function (req, res) {
   ttnApi.sendPayload('01');
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/webserver/index.html'));
 });
 
 app.post('/locate', function (req, res) {
@@ -32,7 +32,7 @@ app.post('/locate', function (req, res) {
       messageApi.printBalance();
     }
   );
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/webserver/index.html'));
 });
 
 app.listen(3000, function () {
