@@ -54,10 +54,7 @@
       <p>(Make sure your gps is on!)</p>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-          crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript">
     let find = document.getElementById('find-my-bike');
     let tooDrunk = document.getElementById('too-drunk-bike');
@@ -65,6 +62,7 @@
     find.addEventListener("click", () => {
       $.get('/blink', function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
+        alert("Look for a blinking light!");
       });
     });
 
@@ -78,7 +76,7 @@
           function(data, status){
             console.log("Data: " + data + "\nStatus: " + status);
           });
-        alert(`${position.coords.latitude}, ${position.coords.longitude}`);
+        alert(`We just send the Google Maps address to your phone.`);
       });
     });
 
